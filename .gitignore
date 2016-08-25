@@ -35,3 +35,15 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# ignore all source directories
+.actions
+.components
+.containers
+.reducers
+.store
+
+index.js
+.babelrc
+LICENSE
+README.md

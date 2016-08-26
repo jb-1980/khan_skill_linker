@@ -80,7 +80,7 @@ export default class Skill extends React.Component {
     const videoButtons = videos.map((video,key) => {
       return (
         <button key={key}
-          onClick={"changeVideo('http://www.khanacademy.org/embed_video?v="+video+')'}
+          onClick={"changeVideo('https://www.khanacademy.org/embed_video?v="+video+')'}
           className="btn-success btn-large"
         >
           Video {key + 1}
@@ -95,7 +95,7 @@ export default class Skill extends React.Component {
             style={{width: "853px", height:"480px", border:"none",
                     backgroundColor:"ghostwhite",margin:"auto"}}
             scrolling="no"
-            src={"http://www.khanacademy.org/embed_video?v="+ videos[0]}
+            src={"https://www.khanacademy.org/embed_video?v="+ videos[0]}
             allowFullScreen=""
           />
         </p>

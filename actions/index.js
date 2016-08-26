@@ -75,7 +75,7 @@ export function fetchSkill(skillname){
   return function(dispatch) {
     dispatch(requestSkill())
     dispatch(fetchVideos(skillname))
-    const url = 'http://www.khanacademy.org/api/v1/exercises/'+skillname
+    const url = 'https://www.khanacademy.org/api/v1/exercises/'+skillname
     return fetch(url)
       .then(handleErrors)
       .then(response => response.json())
@@ -104,7 +104,7 @@ function fetchVideos(skillname){
   return function(dispatch) {
     dispatch(requestVideos())
 
-    const url = 'http://www.khanacademy.org/api/v1/exercises/'+skillname+'/videos'
+    const url = 'https://www.khanacademy.org/api/v1/exercises/'+skillname+'/videos'
     return fetch(url)
       .then(handleErrors)
       .then(response => response.json())

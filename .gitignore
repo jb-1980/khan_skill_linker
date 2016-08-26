@@ -37,11 +37,11 @@ jspm_packages
 .node_repl_history
 
 # ignore all source directories
-.actions
-.components
-.containers
-.reducers
-.store
+.actions/
+.components/
+.containers/
+.reducers/
+.store/
 
 index.js
 .babelrc

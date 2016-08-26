@@ -41,7 +41,7 @@ export default class SkillDisplay extends React.Component {
               top:'50%',
               transform: 'translateY(-50%)'}}
           >
-            <img src="/static/squares.gif"/>
+            <img src="static/squares.gif"/>
           </div>
         </div>
       )

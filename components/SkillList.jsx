@@ -20,7 +20,7 @@ export default class SkillList extends Component {
               textAlign:'center',
               margin: 'auto'}}
           >
-            <img src="/static/squares.gif" style={{height:'60px',width:60}}/>
+            <img src="static/squares.gif" style={{height:'60px',width:60}}/>
           </div>
         </div>
       )

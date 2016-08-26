@@ -23477,7 +23477,7 @@
 	  return function (dispatch) {
 	    dispatch(requestSkill());
 	    dispatch(fetchVideos(skillname));
-	    var url = 'http://www.khanacademy.org/api/v1/exercises/' + skillname;
+	    var url = 'https://www.khanacademy.org/api/v1/exercises/' + skillname;
 	    return (0, _isomorphicFetch2.default)(url).then(handleErrors).then(function (response) {
 	      return response.json();
 	    }).then(function (json) {
@@ -23503,7 +23503,7 @@
 	  return function (dispatch) {
 	    dispatch(requestVideos());
 
-	    var url = 'http://www.khanacademy.org/api/v1/exercises/' + skillname + '/videos';
+	    var url = 'https://www.khanacademy.org/api/v1/exercises/' + skillname + '/videos';
 	    return (0, _isomorphicFetch2.default)(url).then(handleErrors).then(function (response) {
 	      return response.json();
 	    }).then(function (json) {
@@ -24218,7 +24218,7 @@
 	                textAlign: 'center',
 	                margin: 'auto' }
 	            },
-	            _react2.default.createElement('img', { src: '/static/squares.gif', style: { height: '60px', width: 60 } })
+	            _react2.default.createElement('img', { src: 'static/squares.gif', style: { height: '60px', width: 60 } })
 	          )
 	        );
 	      }
@@ -24352,7 +24352,7 @@
 	                top: '50%',
 	                transform: 'translateY(-50%)' }
 	            },
-	            _react2.default.createElement('img', { src: '/static/squares.gif' })
+	            _react2.default.createElement('img', { src: 'static/squares.gif' })
 	          )
 	        );
 	      }

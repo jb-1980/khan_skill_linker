@@ -40,7 +40,7 @@ export function getSkillList() {
   return function(dispatch) {
     dispatch(requestSkillList())
 
-    const url = "http://www.khanacademy.org/api/v1/exercises"
+    const url = "https://www.khanacademy.org/api/v1/exercises"
     return fetch(url)
       .then(handleErrors)
       .then(response => response.json())

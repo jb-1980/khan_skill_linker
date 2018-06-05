@@ -36,20 +36,16 @@ export function receiveSkillList(skill_list) {
   }
 }
 
-export function getSkillList(getAll = false) {
+export function getSkillList() {
   return function(dispatch) {
     dispatch(requestSkillList())
 
-    const url = getAll
-      ? "http://www.khanacademy.org/api/v1/exercises"
-      : "https://www.khanacademy.org/api/internal/exercises/math_topics_and_exercises"
-    console.log(url)
+    const url = "http://www.khanacademy.org/api/v1/exercises"
     return fetch(url)
       .then(handleErrors)
       .then(response => response.json())
       .then(json => {
-        let exercises = getAll ? json : json.exercises
-        const skill_list = exercises.reduce((acc, skill) => {
+        const skill_list = json.reduce((acc, skill) => {
           acc[skill.name] = skill
           return acc
         }, {})

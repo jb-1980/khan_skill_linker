@@ -48,18 +48,6 @@ export default class Selector extends Component {
               <span className="material-input" />
             </div>
           </form>
-          <button
-            className="btn btn-raised"
-            style={{
-              backgroundColor: "#009688",
-              color: "#fff",
-              margin: "auto",
-              display: "inherit"
-            }}
-            onClick={() => getSkillList(true)}
-          >
-            Fetch extra skills
-          </button>
         </ul>
         <SkillList />
       </div>

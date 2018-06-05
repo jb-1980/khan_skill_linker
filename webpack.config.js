@@ -1,28 +1,34 @@
-var path = require('path')
-var webpack = require('webpack')
+var path = require("path")
+var webpack = require("webpack")
 
 module.exports = {
-  entry: './index',
+  entry: "./index",
   output: {
-    path: path.join(__dirname,'static'),
-    filename: 'bundle.js',
+    path: path.join(__dirname, "static"),
+    filename: "bundle.js"
   },
   resolve: {
-    extensions: ['','.js','.jsx']
+    extensions: ["", ".js", ".jsx"]
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: [ 'babel' ],
+        loaders: ["babel"],
         exclude: /node_modules/,
         include: __dirname
       },
       {
         test: /\.css?$/,
-        loaders: [ 'style', 'raw' ],
+        loaders: ["style", "raw"],
         include: __dirname
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify("production")
+    }),
+    new webpack.optimize.UglifyJsPlugin()
+  ]
 }

@@ -7,13 +7,14 @@ import { fetchSkill } from "../actions"
   state => ({
     isFetching: state.skill_list.isFetching,
     skill_list: state.skill_list.skills,
-    value: state.skill_list.value
+    err: state.skill_list.err,
+    value: state.skill_list.value,
   }),
   { fetchSkill }
 )
 export default class SkillList extends Component {
   render() {
-    const { isFetching, skill_list, value, fetchSkill } = this.props
+    const { isFetching, skill_list, value, fetchSkill, err } = this.props
 
     if (isFetching) {
       return (
@@ -22,7 +23,7 @@ export default class SkillList extends Component {
           <div
             style={{
               textAlign: "center",
-              margin: "auto"
+              margin: "auto",
             }}
           >
             <img
@@ -30,6 +31,15 @@ export default class SkillList extends Component {
               style={{ height: "60px", width: 60 }}
             />
           </div>
+        </div>
+      )
+    }
+
+    if (err) {
+      return (
+        <div>
+          <h4 style={{ color: "red" }}>Error fetching skills!</h4>
+          <p>Try refreshing the page</p>
         </div>
       )
     }

@@ -9,7 +9,7 @@ import SkillList from "./SkillList"
   state => ({
     isFetching: state.skill_list.isFetching,
     skill_list: state.skill_list.skills,
-    value: state.skill_list.value
+    value: state.skill_list.value,
   }),
   { selectSkill, getSkillList }
 )
@@ -26,7 +26,7 @@ export default class Selector extends Component {
   }
 
   render() {
-    const { value, isFetching, selectSkill, getSkillList } = this.props
+    const { value, isFetching, selectSkill } = this.props
     const hidden = isFetching ? "hidden" : ""
 
     return (

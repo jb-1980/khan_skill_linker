@@ -2,6 +2,7 @@ import fetch from "isomorphic-fetch"
 
 export const REQUEST_SKILL_LIST = "REQUEST_SKILL_LIST"
 export const RECEIVE_SKILL_LIST = "RECEIVE_SKILL_LIST"
+export const ERROR_SKILL_LIST = "ERROR_SKILL_LIST"
 export const SELECT_SKILL = "SELECT_SKILL"
 export const REQUEST_SKILL = "REQUEST_SKILL"
 export const RECEIVE_SKILL = "RECEIVE_SKILL"
@@ -12,29 +13,34 @@ export const SET_SKILL_NAME = "SET_SKILL_NAME"
 export function setSkillName(skill_name) {
   return {
     type: SET_SKILL_NAME,
-    skill_name
+    skill_name,
   }
 }
 
 export function selectSkill(e) {
   return {
     type: SELECT_SKILL,
-    value: e.target.value
+    value: e.target.value,
   }
 }
 
 export function requestSkillList() {
   return {
-    type: REQUEST_SKILL_LIST
+    type: REQUEST_SKILL_LIST,
   }
 }
 
 export function receiveSkillList(skill_list) {
   return {
     type: RECEIVE_SKILL_LIST,
-    skills: skill_list
+    skills: skill_list,
   }
 }
+
+const errorSkillList = err => ({
+  type: ERROR_SKILL_LIST,
+  err,
+})
 
 export function getSkillList() {
   return function(dispatch) {
@@ -51,19 +57,20 @@ export function getSkillList() {
         }, {})
         dispatch(receiveSkillList(skill_list))
       })
+      .catch(err => dispatch(errorSkillList(err)))
   }
 }
 
 function requestSkill() {
   return {
-    type: REQUEST_SKILL
+    type: REQUEST_SKILL,
   }
 }
 
 function receiveSkill(json) {
   return {
     type: RECEIVE_SKILL,
-    skillProps: json
+    skillProps: json,
   }
 }
 
@@ -81,14 +88,14 @@ export function fetchSkill(skillname) {
 
 function requestVideos() {
   return {
-    type: REQUEST_VIDEOS
+    type: REQUEST_VIDEOS,
   }
 }
 
 function receiveVideos(json) {
   return {
     type: RECEIVE_VIDEOS,
-    videos: json
+    videos: json,
   }
 }
 

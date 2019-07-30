@@ -1,12 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react"
+import ReactDOM from "react-dom"
+import { css } from "emotion"
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { Navbar } from "./components/navbar"
+import { Sidebar } from "./components/sidebar"
+import { CodeContainer } from "./components/code-container"
+import { DataProvider } from "./contexts/data-context"
+import "./index.css"
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const App = () => {
+  const [exercise, setExercise] = React.useState(null)
+
+  return (
+    <div>
+      <Navbar />
+      <div
+        className={css`
+          display: flex;
+          min-height: calc(100vh - 50px);
+          background: #eee;
+          text-align: left;
+        `}
+      >
+        <Sidebar selectHandler={setExercise} selected={exercise} />
+        <CodeContainer exercise={exercise} />
+      </div>
+    </div>
+  )
+}
+
+const rootElement = document.getElementById("root")
+ReactDOM.render(
+  <DataProvider>
+    <App />
+  </DataProvider>,
+  rootElement
+)

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/khan_skill_linker/static/css/main.4466d0e7.chunk.css",
+    "main.js": "/khan_skill_linker/static/js/main.de221cc9.chunk.js",
+    "main.js.map": "/khan_skill_linker/static/js/main.de221cc9.chunk.js.map",
+    "runtime~main.js": "/khan_skill_linker/static/js/runtime~main.a2237f99.js",
+    "runtime~main.js.map": "/khan_skill_linker/static/js/runtime~main.a2237f99.js.map",
+    "static/js/2.f99fa2e6.chunk.js": "/khan_skill_linker/static/js/2.f99fa2e6.chunk.js",
+    "static/js/2.f99fa2e6.chunk.js.map": "/khan_skill_linker/static/js/2.f99fa2e6.chunk.js.map",
+    "index.html": "/khan_skill_linker/index.html",
+    "precache-manifest.ec5c50b27e648692b0546e1a0a4919f5.js": "/khan_skill_linker/precache-manifest.ec5c50b27e648692b0546e1a0a4919f5.js",
+    "service-worker.js": "/khan_skill_linker/service-worker.js",
+    "static/css/main.4466d0e7.chunk.css.map": "/khan_skill_linker/static/css/main.4466d0e7.chunk.css.map"
+  }
+}

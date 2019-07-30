@@ -1,7 +1,18 @@
 {
   "name": "khanskilllinker",
   "version": "0.1.0",
-  "private": true,
+  "description": "A simple app to build the html for a lesson page that links out to a Khan Academy skill",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jb-1980/khan_skill_linker.git"
+  },
+  "author": "Joseph Gilgen <gilgenlabs@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jb-1980/khan_skill_linker/issues"
+  },
+  "homepage": "https://jb-1980.github.io/khan_skill_linker/",
   "dependencies": {
     "emotion": "^10.0.14",
     "react": "^16.8.6",

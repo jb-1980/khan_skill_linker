@@ -1,0 +1,8 @@
+<svg width="400" height="400">
+  <path d="M 300 27 L 100 27 L 0 200 L 100 373 L 300 373 L 400 200" style="fill: #089de3" transform="rotate(30, 200, 200)"/>
+  <g transform="translate(40, 40) scale(0.8) rotate(-30, 200, 200) " style="fill: white;">
+    <path d="M 135, 180 L 265, 180 L 285, 200 L 265, 220 L 135, 220 L 115, 200 Z"/>
+    <path d="M 0, 200 L 20, 130 L 150, 130 L 170, 175 L 130, 175 L 125, 170 L 50 170 L 40, 200 L 50 230 L 125 230 L 130 225 L 170 225 L 150 270 L 20 270" transform="translate(20)"/>
+    <path d="M 0, 200 L 20, 130 L 150, 130 L 170, 175 L 130, 175 L 125, 170 L 50 170 L 40, 200 L 50 230 L 125 230 L 130 225 L 170 225 L 150 270 L 20 270" transform="translate(380) rotate(180, 0, 200)"/>
+  </g>
+</svg>

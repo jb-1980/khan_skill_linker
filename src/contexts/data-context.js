@@ -27,52 +27,15 @@ const DataProvider = ({ children }) => {
 
 const useDataContext = () => React.useContext(DataContext)
 
-const parseExerciseData = data => {
-  if (Array.isArray(data)) {
-    return data.reduce((acc, child) => {
-      if (child.children) {
-        return { ...acc, ...parseExerciseData(child.children) }
-      } else if (child.kind === "Exercise") {
-        return {
-          ...acc,
-          [child.id]: {
-            imageUrl: child.image_url,
-            name: child.name,
-            title: child.title,
-            ka_url: child.ka_url,
-          },
-        }
-      }
-      return acc
-    }, {})
-  }
-
-  if (data.children) {
-    return parseExerciseData(data.children)
-  }
-
-  if (data.kind === "Exercise") {
-    return {
-      [data.id]: {
-        imageUrl: data.image_url,
-        name: data.name,
-        title: data.title,
-        ka_url: data.ka_url,
-      },
-    }
-  }
-}
-
 const fetchExercises = (data, setData) => {
   if (data.exercises.length === 0 && data.error === null) {
     let exercises = localStorage.getItem("khan-academy-exercises")
     if (exercises === null) {
-      const url =
-        "https://jgilgen.pythonanywhere.com/api/v1/topictree?kind=Exercise"
+      const url = "https://jgilgen.pythonanywhere.com/api/v2/topics/topictree"
       fetch(url)
         .then(res => res.json())
         .then(json => {
-          exercises = Object.values(parseExerciseData(json))
+          exercises = json.exercises
           localStorage.setItem(
             "khan-academy-exercises",
             JSON.stringify(exercises)

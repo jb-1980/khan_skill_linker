@@ -11,16 +11,18 @@ const exerciseClass = css`
   font-family: monospace;
 `
 
-export const Sidebar = ({ selectHandler, selected }) => {
+export const Sidebar = ({ selectHandler }) => {
   const [keyword, setKeyword] = React.useState("")
   const { exercises, loading, error, refreshExercises } = useDataContext()
-  const filteredExercises = exercises.filter(e => e.title.includes(keyword))
+  const filteredExercises = exercises.filter(e =>
+    e.title.toLowerCase().includes(keyword.toLowerCase())
+  )
 
-  const exerciseList = filteredExercises.slice(0, 10).map(({ name, title }) => (
+  const exerciseList = filteredExercises.slice(0, 10).map(({ slug, title }) => (
     <div
-      key={name}
+      key={slug}
       className={exerciseClass}
-      onClick={() => selectHandler(name)}
+      onClick={() => selectHandler(slug)}
     >
       {title}
     </div>
@@ -49,7 +51,7 @@ export const Sidebar = ({ selectHandler, selected }) => {
           <AtomSpinner />
         </div>
       ) : error ? (
-        <h2>{error}</h2>
+        <h2 style={{ textAlign: "center" }}>{error}</h2>
       ) : (
         <>
           <div style={{ fontSize: 18 }}>

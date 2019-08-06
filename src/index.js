@@ -22,7 +22,7 @@ const App = () => {
           text-align: left;
         `}
       >
-        <Sidebar selectHandler={setExercise} selected={exercise} />
+        <Sidebar selectHandler={setExercise} />
         <CodeContainer exercise={exercise} />
       </div>
     </div>

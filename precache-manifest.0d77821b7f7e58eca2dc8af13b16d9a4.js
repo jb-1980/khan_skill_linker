@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ec0a3dc3c2205c0b8928ee0ae1df9971",
+    "revision": "5a20698987b53b91ed09b0b61b068fde",
     "url": "/khan_skill_linker/index.html"
   },
   {
-    "revision": "d001855be5ec4aac93d6",
+    "revision": "771617eb5bb4390d9e60",
     "url": "/khan_skill_linker/static/css/main.4466d0e7.chunk.css"
   },
   {
-    "revision": "2d163a4b01f794f51e62",
-    "url": "/khan_skill_linker/static/js/2.f99fa2e6.chunk.js"
+    "revision": "8f769c6db4602ed5663d",
+    "url": "/khan_skill_linker/static/js/2.cdd4b83f.chunk.js"
   },
   {
-    "revision": "d001855be5ec4aac93d6",
-    "url": "/khan_skill_linker/static/js/main.de221cc9.chunk.js"
+    "revision": "771617eb5bb4390d9e60",
+    "url": "/khan_skill_linker/static/js/main.9d97550d.chunk.js"
   },
   {
     "revision": "923a9bcf7f479a356d6d",
